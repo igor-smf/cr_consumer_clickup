@@ -1,0 +1,14 @@
+venv
+.venv
+.env
+dev.py
+__pycache__/
+*.pyc
+test.py
+delete_firestore_doc.py
+
+test_payload.json
+
+tmp/
+tmp
+test.json
