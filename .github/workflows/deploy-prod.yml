@@ -29,7 +29,6 @@ jobs:
         run: |
           cat <<EOF > .env.yaml
           PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
-          APP_ENV: prod
           BQ_DATASET: loot_dw        # 👈 dataset de produção
           SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
           DB_HOST: ${{ secrets.DB_HOST }}
