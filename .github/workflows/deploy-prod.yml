@@ -36,6 +36,8 @@ jobs:
           DB_NAME: ${{ secrets.DB_NAME }}
           DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
           DB_USER: ${{ secrets.DB_USER }}
+          DB_PORT: "5432"
+          IDEMPOTENCY_TTL_MINUTES: "15"
 
           EOF
 
@@ -53,5 +55,6 @@ jobs:
             --min-instances=0 \
             --max-instances=5 \
             --allow-unauthenticated \
+            --add-cloudsql-instances=${{ secrets.DB_CONNECTION_NAME }} \
             --env-vars-file=.env.yaml \
             --verbosity=debug
